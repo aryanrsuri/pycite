@@ -9,10 +9,8 @@ for fn in os.listdir("data"):
         raise Exception
 
 d = Cite("10.1073/pnas.2214423119", rtype="doi")
-print(d.parts)
-print(Cite.__doc__)
+# will fail
 x = Cite("", rtype="doi")
-print(x.parts)
 
 
 
