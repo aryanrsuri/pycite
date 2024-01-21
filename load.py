@@ -5,7 +5,10 @@ for fn in os.listdir("data"):
     ext: str = fn.rsplit(".")[-1]
     try:
         c = Cite(file.read(), ext)
-        print(c.parts)
+        if ext == "bib":
+            mla = c.format("mla")
+            apa = c.format("apa")
+            print("-------%s------\nMLA:  %s \nAPA: %s\n" % (fn, mla, apa))
     except Exception:
         raise Exception
 
