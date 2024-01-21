@@ -73,17 +73,17 @@ class Cite(object):
             return None
         raise Exception("Invalid DOI")
 
-    def format(self, ftype: str) -> str:
+    def templ(self, ftype: str) -> str:
         match ftype:
             case "mla":
-                return self.__format_mla(self.parts)
+                return self.__templ_mla(self.parts)
             case "apa":
-                return self.__format_apa(self.parts)
+                return self.__templ_apa(self.parts)
             case _:
-                return "Null format"
+                return "Null template"
 
     @staticmethod
-    def __format_mla(parts: dict):
+    def __templ_mla(parts: dict):
         mla_citation = {
             "author": parts.get('author', ''),
             "title": parts.get('title', ''),
@@ -97,7 +97,7 @@ class Cite(object):
         return f"{mla_citation['author']}. \"{mla_citation['title']}\". {mla_citation['publisher']} {mla_citation['year']}. {mla_citation['journal']}, vol. {mla_citation['volume']}, no. {mla_citation['number']}, {mla_citation['pages']}."
 
     @staticmethod
-    def __format_apa(parts: dict):
+    def __templ_apa(parts: dict):
         apa_citation = {
             "author": parts.get('author', ''),
             "year": parts.get('year', ''),
