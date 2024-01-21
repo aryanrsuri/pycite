@@ -8,7 +8,7 @@ template: apa,chicago,mla,vancouver,harvard
 
 How it works
 ```
-    c = Cite(file)
+    c = Cite(buffer, extension)
     c.templ("apa")
     c.format("ris")
 ```
