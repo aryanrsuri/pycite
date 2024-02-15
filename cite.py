@@ -4,7 +4,6 @@ import json
 from citetypes import entrytypes, risentrytypes
 from citetypes import fieldtypes
 
-
 class Cite(object):
     """ Generate new Citation
         raw: str -- the raw string input
